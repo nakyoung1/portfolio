@@ -18,17 +18,35 @@ $(function () {
 
      $(window).on("scroll", function () {
           if (($(this).scrollTop() as number) > 100) {
-               $("header").css({
+               $("nav").css({
                     "background-color": "#eee",
                     color: "#111",
                });
                $("#header-list a").css({ color: "#111" });
+               $("#header-list a")
+                    .on("mouseenter", function () {
+                         // 마우스를 올렸을 때
+                         $(this).css("color", "#8d5d5d");
+                    })
+                    .on("mouseleave", function () {
+                         // 마우스를 뗐을 때
+                         $(this).css("color", "#111");
+                    });
           } else {
-               $("header").css({
-                    "background-color": "#111",
+               $("nav").css({
+                    "background-color": "transparent",
                     color: "#eee",
                });
                $("#header-list a").css({ color: "#eee" });
+               $("#header-list a")
+                    .on("mouseenter", function () {
+                         // 마우스를 올렸을 때
+                         $(this).css("color", "#8d5d5d");
+                    })
+                    .on("mouseleave", function () {
+                         // 마우스를 뗐을 때
+                         $(this).css("color", "#eee");
+                    });
           }
      });
 
