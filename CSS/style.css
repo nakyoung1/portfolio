@@ -188,6 +188,9 @@ section {
 #skills-container {
      margin: 0 auto;
      margin: 30px 0;
+     display: flex;
+     flex-wrap: wrap;
+     gap: 10px;
 }
 .skill-box {
      width: 30%;
