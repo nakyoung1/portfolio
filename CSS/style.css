@@ -22,6 +22,7 @@ p,
 h4 {
      font-family: "Pretendard-Regular";
 }
+
 /*헤더*/
 header {
      position: relative;
@@ -88,6 +89,28 @@ html {
 header span {
      margin: 0 auto;
 }
+
+/*weather*/
+#weather-container {
+     position: fixed;
+     top: 20px;
+     left: 20px;
+     text-align: center;
+     color: white;
+     font-weight: 500;
+     z-index: 10;
+}
+#main-container {
+     margin: 0 auto;
+     color: white;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-evenly;
+     align-items: center;
+     height: 60%;
+     z-index: 11;
+}
+
 /*메인 */
 
 .container {
@@ -265,15 +288,19 @@ section {
      background-image: url("../img/Macbook_Air_M2_Mockup_1.jpg");
 }
 
-#project3-video {
+#project3 {
+     background-image: url("../img/bom.png");
+}
+
+#project4-video {
      height: 400px;
 }
 
-#project3-video-container {
+#project4-video-container {
      position: relative; /* 자식 요소에 절대 위치를 적용할 수 있도록 */
 }
 
-#project3-video:hover {
+#project4-video:hover {
      filter: brightness(0.8); /* 비디오에 마우스를 올렸을 때 밝기를 낮춤 */
      transition: filter 0.3s ease-in-out; /* 부드러운 효과 */
 }
@@ -302,7 +329,7 @@ section {
 .project-box:hover::after {
      opacity: 1;
 }
-
+/**/
 /*footer */
 footer {
      height: 100px;
@@ -332,3 +359,60 @@ footer {
 #topButton:hover {
      background-color: #dfafaf;
 }
+
+/* ... 기존 스타일 ... */
+
+/* 다크 모드 스타일 */
+.dark-mode {
+     background-color: #111; /* 또는 원하는 어두운 배경색 */
+     color: #eee; /* 또는 원하는 밝은 글자색 */
+}
+
+.dark-mode header {
+     color: #eee; /* 헤더 텍스트 색상 */
+     background-image: url("../img/about_background_dark.jpeg"); /* 어두운 헤더 배경 이미지 (선택 사항, 없어도 됨) */
+}
+
+.dark-mode #header-list a {
+     color: #eee; /* 메뉴 링크 색상 */
+}
+
+.dark-mode #header-list a:hover {
+     color: #8d5d5d; /* 메뉴 링크 호버 색상 */
+}
+
+.dark-mode h2 {
+     color: #eee; /* 제목 색상 */
+}
+
+.dark-mode #weather-container {
+     color: #eee; /* 날씨 정보 색상 */
+}
+
+.dark-mode #skills-box {
+     background-color: #222; /* 스킬 박스 배경색 */
+}
+
+.dark-mode .skill-box {
+     color: #eee; /* 스킬 박스 텍스트 색상 */
+}
+.dark-mode #skills-container .skill-box {
+     /* 변경된 부분 */
+     color: #eee; /* 스킬 박스 텍스트 색상 */
+}
+
+.dark-mode footer {
+     background-color: #222; /* 푸터 배경색 */
+     color: #eee; /* 푸터 텍스트 색상 */
+}
+
+.dark-mode #topButton {
+     background-color: rgba(255, 255, 255, 0.4); /* 위로 이동 버튼 배경색 */
+     color: #111; /* 위로 이동 버튼 텍스트 색상 */
+}
+
+.dark-mode #topButton:hover {
+     background-color: #eee; /* 위로 이동 버튼 호버 색상 */
+}
+
+/* ... 나머지 스타일 ... */

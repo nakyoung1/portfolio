@@ -32,6 +32,9 @@ $(function () {
                          // 마우스를 뗐을 때
                          $(this).css("color", "#111");
                     });
+               $("#weather-container").css({
+                    display: "none",
+               });
           } else {
                $("nav").css({
                     "background-color": "transparent",
@@ -47,6 +50,9 @@ $(function () {
                          // 마우스를 뗐을 때
                          $(this).css("color", "#eee");
                     });
+               $("#weather-container").css({
+                    display: "block",
+               });
           }
      });
 
@@ -57,3 +63,25 @@ $(function () {
           }
      });
 });
+
+const weatherCity = document.getElementById("weather-city")!;
+const weather = document.getElementById("weather")!;
+const weatherIcon = document.getElementById("weather-icon")!;
+
+function getTemp() {
+     navigator.geolocation.getCurrentPosition(async (position) => {
+          let lat = position.coords.latitude;
+          let long = position.coords.longitude;
+          const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=034db30f421b1daff5ebe414f46fc87c&units=metric&lang=kr`);
+          const data = await response.json();
+          const iconCode = data.weather[0].icon;
+          const url = `https://openweathermap.org/img/wn/${iconCode}.png`;
+          console.log(data);
+          //구조분해
+          weatherIcon.innerHTML = `<img src="${url}" alt="Weather Icon">`;
+          weather.innerHTML = `온도 : ${data.main.temp}℃<br>습도 : ${data.main.humidity}`;
+          weatherCity.innerHTML = data.name;
+     });
+}
+
+getTemp();
