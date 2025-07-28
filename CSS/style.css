@@ -292,15 +292,27 @@ section {
      background-image: url("../img/bom.png");
 }
 
-#project4-video {
+#project4 {
+     background-image: url("../img/hansul.png");
+}
+#project5 {
+     background-image: url("../img/sulbitdam.png");
+}
+#project6 {
+     background-image: url("../img/WALKEE.png");
+}
+
+#project7-video {
      height: 400px;
+  
 }
 
-#project4-video-container {
+#project7-video-container {
      position: relative; /* 자식 요소에 절대 위치를 적용할 수 있도록 */
+        background-image: url("../img/i-mon.jpg");
 }
 
-#project4-video:hover {
+#project7-video:hover {
      filter: brightness(0.8); /* 비디오에 마우스를 올렸을 때 밝기를 낮춤 */
      transition: filter 0.3s ease-in-out; /* 부드러운 효과 */
 }
